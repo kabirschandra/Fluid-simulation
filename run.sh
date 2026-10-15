@@ -1,11 +1,19 @@
+#!/bin/bash
+
 clear
-clear
-clear
+
 mkdir -p ./bin
-clang ./src/fluid.c $(pkg-config --cflags --libs sdl3) -fsanitize=address -o ./bin/main_bin
+
+clang -O3 \
+    ./src/*.c \
+    $(pkg-config --cflags --libs sdl3) \
+    -lm \
+    -o ./bin/main_bin
+
+if [ $? -ne 0 ]; then
+    echo "Compilation failed."
+    exit 1
+fi
+
 ./bin/main_bin
 
-
-#UP TO HERE:
-
-https://chatgpt.com/c/6ad06845-8d0c-83ec-8a52-796b56bf49ec
