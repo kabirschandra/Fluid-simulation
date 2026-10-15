@@ -150,6 +150,3 @@ Current settings match the last uploaded source: vorticity strength `100`, press
 - Improve mouse input so the injected velocity depends less on event frequency.
 - Profile the pressure solve and grid sampling before increasing resolution.
 
-## Notes
-
-The source keeps the original function names and most of the original algorithms. Changes made during cleanup: duplicate includes removed, unused debug variables removed, rendering now takes the framebuffer as an argument, the optional velocity test takes explicit buffers instead of assuming `uA/vA`, and functions are grouped by purpose. All `void` functions end with `return;` and control statements use `for(...)`, `while(...)`, `if(...)` formatting.
